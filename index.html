@@ -5,13 +5,16 @@
     <title>title</title>
 
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="styles/app.css">
   </head>
-  <body ng-app="turnTimer">
+  <body ng-app="turnTimer" ng-cloak>
     <h1>This space reserved!</h1>
 
     <h2>Content here:</h2>
     <div ng-controller="main">
       {{ text }}
+
+      <player></player>
     </div>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
@@ -23,5 +26,6 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
     
     <script src="js/app.js"></script>
+    <script src="js/player.directive.js"></script>
   </body>
 </html>
