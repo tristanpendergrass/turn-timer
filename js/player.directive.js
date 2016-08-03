@@ -25,6 +25,10 @@ angular.module('turnTimer').directive('player', function($interval) {
           $scope.inProgress = true;
         }
       };
+
+      $scope.reset = function() {
+        $scope.timeLeft = 10000;
+      };
     },
     scope: {
       player: '='

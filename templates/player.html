@@ -16,9 +16,20 @@
         'md-warn': inProgress
       }"
       ng-click="toggle()"
-      flex="50">
+      aria-label="toggle timer">
       <span ng-if="!inProgress">Start</span>
       <span ng-if="inProgress">Stop</span>
+    </md-button>
+  </div>
+
+  <div layout="row" layout-align="center">
+    <md-button
+      ng-class="{
+        transparent: inProgress
+      }"
+      ng-click="reset()"
+      aria-label="reset timer">
+      Reset
     </md-button>
   </div>
 

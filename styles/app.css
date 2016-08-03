@@ -9,3 +9,6 @@ input.player-name {
 .time-left {
   display: inline-block;
 }
+.transparent {
+  opacity: 0;
+}
