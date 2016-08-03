@@ -1,3 +1,11 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
+player {
+}
+input.player-name {
+  text-align: center;
+}
+.time-left {
+  display: inline-block;
+}

@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="styles/app.css">
   </head>
   <body ng-app="turnTimer" ng-cloak>
-    <h1>This space reserved!</h1>
-
-    <h2>Content here:</h2>
-    <div ng-controller="main">
-      {{ text }}
-
-      <player></player>
-    </div>
+    <md-toolbar flex="100">Turn Timer App</md-toolbar>
+    <md-content ng-controller="main" layout="row" layout-wrap layout-padding>
+      <player ng-repeat="player in players" player="player"></player>
+    </md-content>
 
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
@@ -27,5 +23,6 @@
     
     <script src="js/app.js"></script>
     <script src="js/player.directive.js"></script>
+    <script src="js/millisecondsLabel.filter.js"></script>
   </body>
 </html>
