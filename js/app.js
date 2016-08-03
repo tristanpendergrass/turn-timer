@@ -1,3 +1,3 @@
-window.onload = function() {
-  document.getElementById('content').textContent = 'WHy hello there';
-};
+var app = angular.module('turnTimer', []).controller('main', function($scope) {
+  $scope.text = 'angulatr was here';
+});
