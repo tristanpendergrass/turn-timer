@@ -1,13 +1,25 @@
 <md-whiteframe layout="column" layout-align="center" layout-margin class="md-whiteframe-5dp">
 
   <md-input-container>
-    <input ng-model="player.name" class="player-name">
+    <input ng-model="player.name" class="player-name" aria-label="player name">
   </md-input-container>
 
   <img src="assets/img/avatar-empty.png" width="234">
 
   <div class="time-left">{{ timeLeft | millisecondsLabel }}</div>
 
-  <md-button class="md-primary md-raised">Start</md-button>
+  <div layout="row" layout-align="center">
+    <md-button
+      class="md-raised"
+      ng-class="{
+        'md-primary': !inProgress,
+        'md-warn': inProgress
+      }"
+      ng-click="toggle()"
+      flex="50">
+      <span ng-if="!inProgress">Start</span>
+      <span ng-if="inProgress">Stop</span>
+    </md-button>
+  </div>
 
 </md-whiteframe>
