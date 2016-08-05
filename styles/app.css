@@ -3,7 +3,7 @@
 }
 player {
 }
-input.player-name {
+input.player-name, input.time-to-add {
   text-align: center;
 }
 .time-left {
@@ -11,4 +11,33 @@ input.player-name {
 }
 .transparent {
   opacity: 0;
+}
+.md-errors-spacer {
+  min-height: 0 !important;
+}
+.time-unit {
+  display: inline-block;
+  font-size: 0;
+}
+.adjust-time {
+  height: 18px;
+  opacity: 0;
+}
+.adjust-time md-icon {
+  width: 16px !important;
+  min-width:16px !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+.number {
+  display: inline-block;
+  line-height: 1.0;
+}
+.number.milliseconds{
+  margin-top: 22px;
+  min-width: 56.72px;
+  text-align: right;
+}
+.unit-column:hover .adjust-time {
+  opacity: 1;
 }

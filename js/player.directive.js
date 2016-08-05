@@ -5,6 +5,17 @@ angular.module('turnTimer').directive('player', function($interval) {
     link: function($scope) {
       $scope.timeLeft = 10000;
 
+      $scope.$watch('timeLeft', function(timeLeft) {
+        if (timeLeft < 0) {
+          $scope.timeLeft = 0;
+        } else {
+          $scope.hours = Math.floor(timeLeft / 1000 / 60 / 60);
+          $scope.minutes = Math.floor(timeLeft / 1000 / 60 % 60);
+          $scope.seconds = Math.floor((timeLeft / 1000) % 60);
+          $scope.milliseconds = Math.floor(timeLeft % 1000);
+        }
+      });
+
       $scope.toggle = function() {
         if ($scope.inProgress) {
           $interval.cancel($scope.countdown);
@@ -26,9 +37,6 @@ angular.module('turnTimer').directive('player', function($interval) {
         }
       };
 
-      $scope.reset = function() {
-        $scope.timeLeft = 10000;
-      };
     },
     scope: {
       player: '='
