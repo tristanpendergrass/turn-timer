@@ -10,4 +10,11 @@ angular.module('turnTimer')
   $scope.deletePlayer = function(player) {
     $scope.players.splice($scope.players.indexOf(player), 1);
   };
+
+  $scope.addPlayer = function() {
+    const playerNumber = $scope.players.length + 1;
+    $scope.players.push({
+      name: 'Player #' + playerNumber
+    });
+  }
 });

@@ -23,9 +23,7 @@ input.player-name, input.time-to-add {
 }
 .adjust-time md-icon {
   width: 16px !important;
-  min-width:16px !important;
-  width: 14px !important;
-  height: 14px !important;
+  min-width: 16px !important;
 }
 .number {
   display: inline-block;
@@ -46,4 +44,31 @@ input.player-name, input.time-to-add {
   position: absolute;
   top: 0;
   right: 0;
+}
+.add-player {
+  height: 600px;
+}
+.add-player > img {
+  margin-top: 58px;
+  opacity: .20;
+  display: block;
+}
+.add-player:focus, .add-player > img {
+  outline: none;
+}
+.add-player:hover {
+  cursor: pointer;
+}
+.add-player:hover md-icon.add-player-button {
+  opacity: 1.0;
+  transition: opacity 500ms;
+}
+md-icon.add-player-button {
+  width: 200px; !important;
+  height: 200px; !important;
+  position: absolute;
+  top: 98px;
+  left: 48px;
+  opacity: 0;
+  z-index: 1;
 }
