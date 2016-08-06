@@ -69,4 +69,5 @@ md-icon.add-player-button {
   left: 48px;
   opacity: 0;
   z-index: 1;
+  transition: opacity 250ms;
 }

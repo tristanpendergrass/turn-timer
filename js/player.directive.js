@@ -6,6 +6,8 @@ angular.module('turnTimer').directive('player', function($interval) {
       $scope.$watch('player.timeLeft', function(timeLeft) {
         if (timeLeft < 0) {
           $scope.player.timeLeft = 0;
+        } else if (timeLeft > 35999999) {
+          $scope.player.timeLeft = 35999999;
         } else {
           $scope.hours = Math.floor(timeLeft / 1000 / 60 / 60);
           $scope.minutes = Math.floor(timeLeft / 1000 / 60 % 60);
