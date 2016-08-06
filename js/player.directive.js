@@ -36,10 +36,10 @@ angular.module('turnTimer').directive('player', function($interval) {
           $scope.inProgress = true;
         }
       };
-
     },
     scope: {
-      player: '='
+      player: '=',
+      onDelete: '&'
     }
   };
 });

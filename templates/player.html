@@ -1,8 +1,13 @@
-<md-whiteframe layout="column" layout-align="center center" layout-margin class="md-whiteframe-5dp">
+<md-whiteframe layout="column" layout-align="center center" layout-margin class="player-frame md-whiteframe-5dp">
 
   <md-input-container>
     <input ng-model="player.name" class="player-name" aria-label="player name">
   </md-input-container>
+
+  <md-button ng-click="onDelete()" class="delete-player md-icon-button md-warn" aria-label="delete player">
+    <md-icon md-svg-src="assets/svg/close.svg"></md-icon>
+    <md-tooltip md-delay="400">Delete Player</md-tooltip>
+  </md-button>
 
   <img src="assets/img/avatar-empty.png" width="300">
 

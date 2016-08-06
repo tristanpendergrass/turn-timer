@@ -1,8 +1,6 @@
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
 }
-player {
-}
 input.player-name, input.time-to-add {
   text-align: center;
 }
@@ -40,4 +38,12 @@ input.player-name, input.time-to-add {
 }
 .unit-column:hover .adjust-time {
   opacity: 1;
+}
+.player-frame {
+  position: relative;
+}
+.delete-player {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
