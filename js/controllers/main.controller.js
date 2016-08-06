@@ -1,11 +1,6 @@
 angular.module('turnTimer')
-.controller('main', function($scope) {
-  $scope.players = [
-    { name: 'Player #1', timeLeft: 120000 },
-    { name: 'Player #2', timeLeft: 120000 },
-    { name: 'Player #3', timeLeft: 120000 },
-    { name: 'Player #4', timeLeft: 120000 }
-  ];
+.controller('main', function($scope, $mdDialog) {
+  $scope.players = [];
 
   $scope.deletePlayer = function(player) {
     $scope.players.splice($scope.players.indexOf(player), 1);
@@ -15,7 +10,29 @@ angular.module('turnTimer')
     const playerNumber = $scope.players.length + 1;
     $scope.players.push({
       name: 'Player #' + playerNumber,
-      timeLeft: 120000
+      timeLeft: 150000
     });
   }
+
+  $scope.reset = function(event, duration) {
+    const confirm = $mdDialog.confirm()
+      .title('Confirm Reset')
+      .textContent('Are you sure you want to reset all the timers?')
+      .ariaLabel('confirm reset')
+      .targetEvent(event)
+      .ok('Yes')
+      .clickOutsideToClose(true)
+      .cancel('No');
+
+    $mdDialog.show(confirm).then(function() {
+      $scope.players.forEach(function(player) {
+        player.timeLeft = duration;
+      });
+    });
+  };
+
+  $scope.addPlayer();
+  $scope.addPlayer();
+  $scope.addPlayer();
+  $scope.addPlayer();
 });
