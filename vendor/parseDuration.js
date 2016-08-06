@@ -8,7 +8,7 @@
 (function() {
   const duration = /(-?\d*\.?\d+(?:e[-+]?\d+)?)\s*([a-zμ]*)/ig;
 
-  window.parseDuration = function(str) {
+  window.parse = function(str) {
     var result = 0;
     // ignore commas
     str = str.replace(/(\d),(\d)/g, '$1$2');
