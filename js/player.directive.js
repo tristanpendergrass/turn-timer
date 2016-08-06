@@ -3,11 +3,9 @@ angular.module('turnTimer').directive('player', function($interval) {
     restrict: 'E',
     templateUrl: 'templates/player.html',
     link: function($scope) {
-      $scope.timeLeft = 10000;
-
-      $scope.$watch('timeLeft', function(timeLeft) {
+      $scope.$watch('player.timeLeft', function(timeLeft) {
         if (timeLeft < 0) {
-          $scope.timeLeft = 0;
+          $scope.player.timeLeft = 0;
         } else {
           $scope.hours = Math.floor(timeLeft / 1000 / 60 / 60);
           $scope.minutes = Math.floor(timeLeft / 1000 / 60 % 60);
@@ -22,12 +20,12 @@ angular.module('turnTimer').directive('player', function($interval) {
           $scope.inProgress = false;
         } else {
           const now = Date.parse(new Date());
-          const mark = new Date(now + $scope.timeLeft);
+          const mark = new Date(now + $scope.player.timeLeft);
 
           $scope.countdown = $interval(function() {
-            $scope.timeLeft = mark.getTime() - new Date().getTime();
+            $scope.player.timeLeft = mark.getTime() - new Date().getTime();
 
-            if ($scope.timeLeft < 1) {
+            if ($scope.player.timeLeft < 1) {
               $interval.cancel($scope.countdown);
               $scope.inProgress = false;
             }

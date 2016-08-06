@@ -1,10 +1,10 @@
 angular.module('turnTimer')
 .controller('main', function($scope) {
   $scope.players = [
-    { name: 'Player #1' },
-    { name: 'Player #2' },
-    { name: 'Player #3' },
-    { name: 'Player #4' }
+    { name: 'Player #1', timeLeft: 120000 },
+    { name: 'Player #2', timeLeft: 120000 },
+    { name: 'Player #3', timeLeft: 120000 },
+    { name: 'Player #4', timeLeft: 120000 }
   ];
 
   $scope.deletePlayer = function(player) {
@@ -14,7 +14,8 @@ angular.module('turnTimer')
   $scope.addPlayer = function() {
     const playerNumber = $scope.players.length + 1;
     $scope.players.push({
-      name: 'Player #' + playerNumber
+      name: 'Player #' + playerNumber,
+      timeLeft: 120000
     });
   }
 });

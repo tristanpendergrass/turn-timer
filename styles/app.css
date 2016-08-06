@@ -31,8 +31,6 @@ input.player-name, input.time-to-add {
 }
 .number.milliseconds{
   margin-top: 22px;
-  min-width: 56.72px;
-  text-align: right;
 }
 .unit-column:hover .adjust-time {
   opacity: 1;

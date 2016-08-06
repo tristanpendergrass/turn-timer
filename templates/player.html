@@ -31,7 +31,7 @@
         <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
       </md-button>
       <div layout="row" layout-align="center" class="time-unit">
-        <span class="number md-display-3">{{ minutes }}</span>
+        <span class="number md-display-3">{{ minutes | leftPadZeroes : 2 }}</span>
         <span class="unit md-subhead">m</span>
       </div>
       <md-button ng-click="timeLeft = timeLeft - 60000" class="md-icon-button adjust-time" aria-label="adjust time">
@@ -43,7 +43,7 @@
         <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
       </md-button>
       <div layout="row" layout-align="center" class="time-unit">
-        <span class="number md-display-3">{{ seconds }}</span>
+        <span class="number md-display-3">{{ seconds | leftPadZeroes : 2 }}</span>
         <span class="unit md-subhead">s</span>
       </div>
       <md-button ng-click="timeLeft = timeLeft - 1000" class="md-icon-button adjust-time" aria-label="adjust time">
@@ -55,7 +55,7 @@
         <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
       </md-button>
       <div layout="row" layout-align="center" class="time-unit">
-        <span class="number milliseconds md-display-1">{{ milliseconds }}</span>
+        <span class="number milliseconds md-display-1">{{ milliseconds | leftPadZeroes : 3 }}</span>
         <span class="unit md-subhead">ms</span>
       </div>
       <md-button ng-click="timeLeft = timeLeft - 1" class="md-icon-button adjust-time" aria-label="adjust time">
