@@ -1,3 +1,3 @@
 # turn-timer
 
-[Live Demo](tristanpendergrass.github.io/turn-timer)!
+[Live Demo](https://tristanpendergrass.github.io/turn-timer)!
