@@ -1,0 +1,109 @@
+<md-whiteframe layout="column" layout-align="start center" layout-margin class="player-frame md-whiteframe-5dp">
+
+  <md-input-container>
+    <input ng-model="player.name" class="player-name" aria-label="player name">
+  </md-input-container>
+
+  <md-button ng-click="onDelete()" class="delete-player md-icon-button md-warn" aria-label="delete player">
+    <md-icon md-svg-src="assets/svg/close.svg"></md-icon>
+    <md-tooltip md-delay="400">Delete Player</md-tooltip>
+  </md-button>
+
+  <img src="assets/img/avatar-empty.png" width="300">
+
+  <div layout="row" layout-fill layout-margin layout-align="space-between">
+    <div class="unit-column" layout="column" layout-align="center center">
+      <md-button ng-click="player.timeLeft = player.timeLeft + 3600000" class="md-icon-button adjust-time" flex aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
+      </md-button>
+      <div layout="row" layout-align="center" class="time-unit">
+        <span class="number md-display-3">{{ hours }}</span>
+        <span class="unit md-subhead">h</span>
+      </div>
+      <md-button ng-click="player.timeLeft = player.timeLeft - 3600000" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-down.svg"></md-icon>
+      </md-button>
+    </div>
+    <div class="unit-column" layout="column" layout-align="center center">
+      <md-button ng-click="player.timeLeft = player.timeLeft + 60000" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
+      </md-button>
+      <div layout="row" layout-align="center" class="time-unit">
+        <span class="number md-display-3">{{ minutes | leftPadZeroes : 2 }}</span>
+        <span class="unit md-subhead">m</span>
+      </div>
+      <md-button ng-click="player.timeLeft = player.timeLeft - 60000" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-down.svg"></md-icon>
+      </md-button>
+    </div>
+    <div class="unit-column" layout="column" layout-align="center center">
+      <md-button ng-click="player.timeLeft = player.timeLeft + 1000" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
+      </md-button>
+      <div layout="row" layout-align="center" class="time-unit">
+        <span class="number md-display-3">{{ seconds | leftPadZeroes : 2 }}</span>
+        <span class="unit md-subhead">s</span>
+      </div>
+      <md-button ng-click="player.timeLeft = player.timeLeft - 1000" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-down.svg"></md-icon>
+      </md-button>
+    </div>
+    <div class="unit-column" layout="column" layout-align="center center">
+      <md-button ng-click="player.timeLeft = player.timeLeft + 1" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-up.svg"></md-icon>
+      </md-button>
+      <div layout="row" layout-align="center" class="time-unit">
+        <span class="number milliseconds md-display-1">{{ milliseconds | leftPadZeroes : 3 }}</span>
+        <span class="unit md-subhead">ms</span>
+      </div>
+      <md-button ng-click="player.timeLeft = player.timeLeft - 1" class="md-icon-button adjust-time" aria-label="adjust time">
+        <md-icon md-svg-src="assets/svg/arrow-down.svg"></md-icon>
+      </md-button>
+    </div>
+  </div>
+
+  <div layout="row" layout-align="space-around">
+    <md-button
+      class="md-raised"
+      ng-class="{
+        'md-primary': !inProgress,
+        'md-warn': inProgress
+      }"
+      ng-click="toggle()"
+      aria-label="toggle timer">
+      <span ng-if="!inProgress">Start</span>
+      <span ng-if="inProgress">Stop</span>
+    </md-button>
+    <!--<md-button-->
+      <!--ng-class="{-->
+        <!--transparent: inProgress-->
+      <!--}"-->
+      <!--ng-click="reset()"-->
+      <!--aria-label="reset timer">-->
+      <!--Reset-->
+    <!--</md-button>-->
+  </div>
+
+  <md-divider flex></md-divider>
+
+  <!--<div layout="row" layout-align="center center">-->
+    <!--<div layout="row" layout-align="center" flex="50">-->
+      <!--<md-button-->
+        <!--class="md-raised md-accent"-->
+        <!--ng-click="addTime()"-->
+        <!--aria-label="add time">-->
+        <!--Add-->
+      <!--</md-button>-->
+      <!--<md-button-->
+        <!--class="md-raised md-accent"-->
+        <!--ng-click="subtractTime()"-->
+        <!--aria-label="subtract time">-->
+        <!--Subtract-->
+      <!--</md-button>-->
+    <!--</div>-->
+    <!--<md-input-container flex="50">-->
+      <!--<input type="text" class="time-to-add" ng-model="timeToAdd" aria-label="time to add">-->
+    <!--</md-input-container>-->
+  <!--</div>-->
+
+</md-whiteframe>

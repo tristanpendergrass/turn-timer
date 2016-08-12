@@ -1,0 +1,76 @@
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+input.player-name, input.time-to-add {
+  text-align: center;
+}
+.time-left {
+  display: inline-block;
+}
+.transparent {
+  opacity: 0;
+}
+.md-errors-spacer {
+  min-height: 0 !important;
+}
+.time-unit {
+  display: inline-block;
+  font-size: 0;
+}
+.adjust-time {
+  height: 18px;
+  opacity: 0;
+}
+.adjust-time md-icon {
+  width: 16px !important;
+  min-width: 16px !important;
+}
+.number {
+  display: inline-block;
+  line-height: 1.0;
+}
+.number.milliseconds{
+  margin-top: 22px;
+}
+.unit-column:hover .adjust-time {
+  opacity: 1;
+}
+.player-frame {
+  position: relative;
+}
+.delete-player {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.add-player {
+  height: 600px;
+}
+.add-player > img {
+  margin-top: 58px;
+  opacity: .20;
+  display: block;
+}
+.add-player:focus, .add-player > img {
+  outline: none;
+}
+.add-player:hover {
+  cursor: pointer;
+}
+.add-player:hover md-icon.add-player-button {
+  opacity: 1.0;
+  transition: opacity 500ms;
+}
+md-icon.add-player-button {
+  width: 200px; !important;
+  height: 200px; !important;
+  position: absolute;
+  top: 98px;
+  left: 48px;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 250ms;
+}
+.reset-button {
+  width: 150px;
+}

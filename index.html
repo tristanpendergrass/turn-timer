@@ -3,10 +3,45 @@
   <head>
     <meta charset="UTF-8">
     <title>title</title>
-  </head>
-  <body>
 
-  <h1>This space reserved!</h1>
-  
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+    <link rel="stylesheet" href="styles/app.css">
+  </head>
+  <body ng-app="turnTimer" ng-controller="main" ng-cloak>
+    <md-toolbar class="md-hue-2" flex="100" layout="row" layout-align="start center">
+      <div class="md-toolbar-tools">Turn Timer</div>
+      <div flex></div>
+      <duration-input value="duration"></duration-input>
+      <md-button
+        ng-click="reset($event, duration)"
+        class="reset-button md-raised md-accent"
+        aria-label="reset timers">
+        Reset Timers
+      </md-button>
+    </md-toolbar>
+    <md-content layout="row" layout-wrap layout-padding>
+      <player ng-repeat="player in players" player="player" on-delete="deletePlayer(player)"></player>
+      <add-player ng-click="addPlayer()"></add-player>
+    </md-content>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+
+    <!-- Angular Material Library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+
+    <script src="vendor/parseDuration.js"></script>
+
+    <script src="js/app.js"></script>
+
+    <script src="js/controllers/main.controller.js"></script>
+
+    <script src="js/directives/player.directive.js"></script>
+    <script src="js/directives/addPlayer.directive.js"></script>
+    <script src="js/directives/durationInput.directive.js"></script>
+
+    <script src="js/filters/leftPadZeroes.filter.js"></script>
   </body>
 </html>
